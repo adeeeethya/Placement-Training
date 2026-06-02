@@ -1,15 +1,13 @@
-#1560a dislike of threes
+#427a
 t=int(input())
-for i in range(t):
-    n=int(input())
-    i=0
-    k=1
-    while 1:
-        if i%3!=0 and i%10!=3:
-            if n==k:
-                print(i)
-                break
-            k=k+1
-        i+=1
-
-
+police,unsolved=0,0
+event=list(map(int,input().split()))
+for e in event:
+    if e == -1:
+        if police>0:
+            police-=1
+        else:
+            unsolved+=1
+    else:
+        police+=e
+print(unsolved)
