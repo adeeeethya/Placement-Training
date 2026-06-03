@@ -1,0 +1,61 @@
+#231
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        if n<1:
+            return False
+        while n:
+            if n==1:
+                return True
+            elif n%2!=0:
+                return False
+            else:
+                n=n//2
+                
+#231
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        if n<1:
+            return False
+        if n&(n-1)==0:
+            return True
+        else:
+            return False
+
+#268
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        l=len(nums)
+        x1,x2=0,0
+        for i in range(l+1):
+            x1=x1^i
+        for i in nums:
+            x2=x2^i
+        return x1^x2
+        
+#136
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        x=0
+        for i in nums:
+            x=x^i
+        return x
+        
+#55 
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        petrol=0
+        for p in nums:
+            if petrol<0:
+                return False
+            elif p>petrol:
+                petrol=p
+            petrol-=1
+        return True
+    
+
+                
+            
+
+            
+
+
